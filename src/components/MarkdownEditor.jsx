@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import { useState, useRef, useEffect, memo } from "react";
+import { useRef, useEffect, memo } from "react";
 import Editor from "@toast-ui/editor";
 
-const MarkdownEditor = memo(function MarkdownEditor() {
-  const [text, setText] = useState(null);
+const MarkdownEditor = memo(function MarkdownEditor(props) {
   const markEditorRef = useRef(null);
 
   useEffect(() => {
@@ -16,6 +15,7 @@ const MarkdownEditor = memo(function MarkdownEditor() {
 
     editor.addHook('change', () => {
       const content = editor.getMarkdown();
+      const { setText } = props;
       setText(content);
       // код который будет вызван при изменении содержимого редактора
     });
