@@ -1,30 +1,20 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from "react";
-import MarkdownEditor from "./components/MarkdownEditor.jsx"; 
+import MarkdownEditor from "./components/MarkdownEditor.jsx";
 import CheckButton from "./components/CheckButton.jsx";
 import ProgressBar from "./components/ProgressBar.jsx";
+import { useSelector } from "react-redux";
 
 const App = () => {
-  const [text, setText] = useState(null);
-  const [progress, setProgress] = useState([
-    'true',
-    'true',
-    'true',
-    'true',
-    'true',
-  ]);
-  // const [textFixtures, setTextFixtures] = useState([
-    // '*Burrito*',
-  // ]);
+  const text = useSelector((state) => state.usersText.value);
   const testText = '*Burrito*';
   const trimmedText = `${text}`.trim();
 
   return (
     <>
-      <h1 className='bg-red-500 text-blue-500 text-3xl font-black italic text-center'>MarkdownTrainer</h1>
-      <MarkdownEditor setText={setText}></MarkdownEditor>
-      <ProgressBar progress={progress} setProgress={setProgress}></ProgressBar>
+      <header className='bg-red-500 text-blue-500 text-3xl font-black italic text-center'>MarkdownTrainer</header>
+      <MarkdownEditor></MarkdownEditor>
+      <ProgressBar></ProgressBar>
       <div className="container flex justify-center mx-auto">
         <CheckButton></CheckButton>
       </div>

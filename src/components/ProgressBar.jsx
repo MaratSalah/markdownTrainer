@@ -1,29 +1,35 @@
+/* eslint-disable react/prop-types */
+
+
 import cn from "classnames";
 import { useId } from "react";
+import { useSelector } from "react-redux";
 
-const ProgressBar = (props) => {
-  const { progress, setProgress } = props;
+const ProgressBar = () => {
+  const levels = useSelector((state) => state.levels.value);
 
-  const classes = progress.map((item) => {
-    if (item === 'false') {
-      const progressClass = cn({
-        'w-10': true,
-        'h-10': true,
-        'm-2': true,
-        'rounded-full': true,
-        'bg-green-500': true,
-      });
-      return progressClass;
+  const prevClasses = {
+    'mx-auto': true,
+    'w-10': true,
+    'h-10': true,
+    'm-2': true,
+    'rounded-full': true,
+    'bg-blue-500': true,
+    'bg-red-500': true,
+  };
+
+  const classes = levels.map((item) => {
+    if (item.ended === 'false') {
+      prevClasses['bg-red-500'] = true;
+      prevClasses['bg-blue-500'] = false;
+      const progressClasses = cn(prevClasses);
+      return progressClasses;
     }
 
-    const progressClass = cn({
-      'w-10': true,
-      'h-10': true,
-      'm-2': true,
-      'rounded-full': true,
-      'bg-red-500': true,
-    });
-    return progressClass;
+    prevClasses['bg-red-500'] = false;
+    prevClasses['bg-blue-500'] = true;
+    const progressClasses = cn(prevClasses);
+    return progressClasses;
   });
 
   return (

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  level: [
+  value: [
     { ended: 'false', active: 'true' },
     { ended: 'false', active: 'false' },
     { ended: 'false', active: 'false' },

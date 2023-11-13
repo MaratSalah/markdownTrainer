@@ -2,9 +2,12 @@
 
 import { useRef, useEffect, memo } from "react";
 import Editor from "@toast-ui/editor";
+import { useDispatch } from "react-redux";
+import { change } from "../slices/usersTextSlice";
 
-const MarkdownEditor = memo(function MarkdownEditor(props) {
+const MarkdownEditor = memo(function MarkdownEditor() {
   const markEditorRef = useRef(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const editor = new Editor({
@@ -15,8 +18,7 @@ const MarkdownEditor = memo(function MarkdownEditor(props) {
 
     editor.addHook('change', () => {
       const content = editor.getMarkdown();
-      const { setText } = props;
-      setText(content);
+      dispatch(change(content));
       // код который будет вызван при изменении содержимого редактора
     });
   });
