@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: {
     entities: {
-      lvl1: { id: 'lvl1', ended: 'false', active: 'true', exercise: '1', },
+      lvl1: { id: 'lvl1', ended: 'false', active: 'true', exercise: '**12345**', },
       lvl2: { id: 'lvl2', ended: 'false', active: 'false', exercise: '2', },
       lvl3: { id: 'lvl3', ended: 'false', active: 'false', exercise: '3', },
       lvl4: { id: 'lvl4', ended: 'false', active: 'false', exercise: '4', },
