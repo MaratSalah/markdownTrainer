@@ -12,8 +12,9 @@ const MarkdownEditor = memo(function MarkdownEditor() {
   useEffect(() => {
     const editor = new Editor({
       el: markEditorRef.current,
-      previewStyle: 'vertical',
+      previewStyle: 'tab',
       hideModeSwitch: true,
+      initialValue: ' ',
     });
 
     editor.addHook('change', () => {
@@ -24,7 +25,7 @@ const MarkdownEditor = memo(function MarkdownEditor() {
   });
 
   return (
-    <div ref={markEditorRef}></div>
+    <div className="w-6/12" ref={markEditorRef}></div>
   );
 });
 
