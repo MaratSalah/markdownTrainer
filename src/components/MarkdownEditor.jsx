@@ -15,6 +15,7 @@ const MarkdownEditor = memo(function MarkdownEditor() {
       previewStyle: 'tab',
       hideModeSwitch: true,
       initialValue: ' ',
+      height: '500px'
     });
 
     editor.addHook('change', () => {
