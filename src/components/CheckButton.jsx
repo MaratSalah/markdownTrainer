@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { nextLevel } from "../slices/levelsSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { nextLevel } from '../slices/levelsSlice';
 
 const CheckButton = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,10 @@ const CheckButton = () => {
   const changeLevel = () => {
     for (let i = 0; i < ids.length; i += 1) {
       const id = ids[i];
-      if (entities[id].ended === 'false' && entities[id].exercise.trim() === usersText.trim()) {
+      if (
+        entities[id].ended === 'false' &&
+        entities[id].exercise.trim() === usersText.trim()
+      ) {
         dispatch(nextLevel(id));
         return;
       }
@@ -19,7 +22,9 @@ const CheckButton = () => {
   };
 
   return (
-    <button onClick={changeLevel} className="transition rounded-md m-3 ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+    <button
+      onClick={changeLevel}
+      className="transition rounded-md m-3 ease-in-out delay-150 bg-gray-900 text-white hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 duration-300">
       <span className="m-6">Send</span>
     </button>
   );
