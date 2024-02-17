@@ -6,7 +6,7 @@ import Example from './components/Example.jsx';
 const App = () => {
   return (
     <>
-      <header className="bg-white text-3xl font-black italic text-center">
+      <header className="bg-white text-3xl font-black italic text-center mb-2">
         MarkdownTrainer
       </header>
       <div className="flex flex-row">
