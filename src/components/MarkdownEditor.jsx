@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import { useRef, useEffect, memo } from "react";
-import Editor from "@toast-ui/editor";
-import { useDispatch } from "react-redux";
-import { change } from "../slices/usersTextSlice";
+import { useRef, useEffect, memo } from 'react';
+import Editor from '@toast-ui/editor';
+import { useDispatch } from 'react-redux';
+import { change } from '../slices/usersTextSlice';
 
 const MarkdownEditor = memo(function MarkdownEditor() {
   const markEditorRef = useRef(null);
@@ -15,7 +15,7 @@ const MarkdownEditor = memo(function MarkdownEditor() {
       previewStyle: 'tab',
       hideModeSwitch: true,
       initialValue: ' ',
-      height: '500px'
+      height: '500px',
     });
 
     editor.addHook('change', () => {
@@ -25,9 +25,7 @@ const MarkdownEditor = memo(function MarkdownEditor() {
     });
   });
 
-  return (
-    <div className="w-6/12" ref={markEditorRef}></div>
-  );
+  return <div className="col-span-1" ref={markEditorRef}></div>;
 });
 
 export default MarkdownEditor;

@@ -22,11 +22,9 @@ const Example = () => {
   });
 
   return (
-    <>
-      <div
-        ref={markExampleRef}
-        className="mt-9 w-1/2 min-h-full border-2 border-inherit"></div>
-    </>
+    <div
+      ref={markExampleRef}
+      className="col-span-1 border-2 border-inherit"></div>
   );
 };
 

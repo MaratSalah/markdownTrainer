@@ -9,9 +9,9 @@ const App = () => {
       <header className="bg-white text-3xl font-black italic text-center mb-2">
         MarkdownTrainer
       </header>
-      <div className="flex flex-row">
-        <MarkdownEditor className="basis-1/2"></MarkdownEditor>
-        <Example className="basis-1/2"></Example>
+      <div className="grid grid-cols-2 grid-rows-12">
+        <MarkdownEditor></MarkdownEditor>
+        <Example></Example>
       </div>
       <ProgressBar></ProgressBar>
       <div className="container flex justify-center mx-auto">
