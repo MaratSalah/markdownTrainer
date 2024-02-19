@@ -21,11 +21,7 @@ const Example = () => {
     });
   });
 
-  return (
-    <div
-      ref={markExampleRef}
-      className="col-span-1 border-2 border-inherit"></div>
-  );
+  return <div ref={markExampleRef} className="border-2 border-inherit"></div>;
 };
 
 export default Example;
