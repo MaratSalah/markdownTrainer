@@ -17,11 +17,11 @@ const App = () => {
       </div>
       <ProgressBar></ProgressBar>
       <div className="container flex justify-center items-center mx-auto">
-        <Helper></Helper>
-      </div>
-      <div className="container flex justify-center items-center mx-auto">
         <CheckButton></CheckButton>
         <HelpButton></HelpButton>
+      </div>
+      <div className="container flex justify-center items-center mx-auto">
+        <Helper></Helper>
       </div>
     </>
   );
