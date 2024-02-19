@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { nextLevel } from '../slices/levelsSlice';
+import { changeHelperVision } from '../slices/helperSlice';
 
 const CheckButton = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const CheckButton = () => {
         entities[id].ended === 'false' &&
         entities[id].exercise.trim() === usersText.trim()
       ) {
-        dispatch(nextLevel(id));
+        dispatch(changeHelperVision(false));
+        window.setTimeout(() => dispatch(nextLevel(id)), 500);
         return;
       }
     }
@@ -24,8 +26,9 @@ const CheckButton = () => {
   return (
     <button
       onClick={changeLevel}
-      className="transition rounded-md m-3 ease-in-out delay-150 bg-gray-900 text-white hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 duration-300">
-      <span className="m-6">Send</span>
+      className="transition rounded-md m-3 py-2 px-6 ease-in-out
+      delay-150 bg-gray-900 text-white hover:scale-110 hover:bg-gray-600 duration-300">
+      <span>Send</span>
     </button>
   );
 };
