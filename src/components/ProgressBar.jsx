@@ -10,9 +10,9 @@ const ProgressBar = () => {
   const winColorHover = 'active:bg-green-700';
   const winColorActive = 'hover:bg-green-500';
 
-  const loseColor = 'bg-white';
-  const loseColorHover = 'active:bg-gray-700';
-  const loseColorActive = 'hover:bg-gray-400';
+  const loseColor = 'bg-violet-400';
+  const loseColorHover = 'active:bg-violet-700';
+  const loseColorActive = 'hover:bg-violet-500';
 
   // start classes, which change when player win level
 
@@ -25,12 +25,11 @@ const ProgressBar = () => {
       [loseColorHover]: true,
       [loseColorActive]: true,
     },
+    'text-white',
     'mx-auto',
     'my-2',
     'h-10',
-    'border-2',
     'rounded-lg',
-    'border-slate-300',
     'w-48',
     'cursor-pointer',
     'transition',
