@@ -60,7 +60,7 @@ const ProgressBar = () => {
   });
 
   return (
-    <div className="container mx-4 gap-56 grid grid-cols-5 justify-between">
+    <div className="grid grid-cols-5 gap-1 justify-between mx-4">
       {classes.map((item, i) => (
         <button key={useId} className={item}>
           <span className="object-center">{i + 1}</span>
